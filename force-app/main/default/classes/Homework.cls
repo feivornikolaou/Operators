@@ -30,8 +30,8 @@ public with sharing class Homework
         Integer millimetres = centimetres++ * 10;
 
         // change the nulls below to the values you expect
-        System.assertEquals(10, centimetres);
-        System.assertEquals(110, millimetres);
+        System.assertEquals(11, centimetres);
+        System.assertEquals(100, millimetres);
     }
 
     public void compoundAssigment()
@@ -47,7 +47,7 @@ public with sharing class Homework
     public void toggleBoolean()
     {
         Boolean done=false;
-        if (done == true)
+        if (done =! true)
         {
             done=false;
         }
@@ -129,7 +129,9 @@ public with sharing class Homework
     public Integer raise(Integer value, Integer power)
     {
         Integer result;
-        result = value^power;
+        value = math.round(power);
+        result = value;
+
         
 
         // assign 'value' raised to the power of 'power' to result

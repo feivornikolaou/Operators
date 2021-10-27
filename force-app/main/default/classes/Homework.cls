@@ -129,11 +129,13 @@ public with sharing class Homework
     public Integer raise(Integer value, Integer power)
     {
         Integer result;
-        double myanswer = Math.Pow(value, power);
+        result=Math.pow(value, power).intValue();
       
         // assign 'value' raised to the power of 'power' to result
         // e.g. if value is 10 and power is 2, result should be 100
         // do not use a loop!
+
+        // Feivor notes, in this case casting is required 
 
         return result;
     }

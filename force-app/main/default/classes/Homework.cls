@@ -129,11 +129,8 @@ public with sharing class Homework
     public Integer raise(Integer value, Integer power)
     {
         Integer result;
-        value = math.round(power);
-        result = value;
-
-        
-
+        double myanswer = Math.Pow(value, power);
+      
         // assign 'value' raised to the power of 'power' to result
         // e.g. if value is 10 and power is 2, result should be 100
         // do not use a loop!

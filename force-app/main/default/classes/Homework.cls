@@ -5,7 +5,7 @@ public with sharing class Homework
     {
         // identify the operators in the snippet below and add
         // them to the comment at the end of this method 
-        // starting 'Operators are : '. 
+        // starting 'Operators are = > == +=: && '. 
         Integer score=3;
 
         if ((actual > desired) && (null == reason) ) {
@@ -15,7 +15,10 @@ public with sharing class Homework
          // Please identify the operators by their characters and
          // purpose.  e.g. '*', multiply
  
-         // Operators are : 
+        
+         // = > == += &&
+         // Operators are '>' greater than '+=', Addition assignment operator ':
+         // '==', equality operator,'&&', AND logical operator
     }
 
     public void increment()
@@ -27,8 +30,8 @@ public with sharing class Homework
         Integer millimetres = centimetres++ * 10;
 
         // change the nulls below to the values you expect
-        System.assertEquals(null, centimetres);
-        System.assertEquals(null, millimetres);
+        System.assertEquals(11, centimetres);
+        System.assertEquals(100, millimetres);
     }
 
     public void compoundAssigment()
@@ -36,14 +39,30 @@ public with sharing class Homework
         Integer value = 40000;
 
         // Convert the following statements to compound assignments.
-        value = value + 70000;
-        value = value / 2;
+        value += 70000;
+        value /= 2;
+        
     }
 
     public void toggleBoolean()
     {
         Boolean done=false;
-
+        if (done =! true)
+        {
+            done=false;
+        }
+        else if (done == false){
+            done=true;
+        }
+        // another way of writing else if
+        if (done)
+        {
+            done=false;
+        }
+        else
+        {   
+            done=true;
+        }
         // add a line to toggle the value of the boolean
         // i.e. if it is true it will change to false and if it is
         // false it will change to true.
@@ -58,7 +77,7 @@ public with sharing class Homework
         Boolean matching = (opp1==opp2);
         
         // update the assert to reflect what you think the value of matching will be
-        System.assertEquals(null, matching);
+        System.assertEquals(false, matching);
     }
 
     public void incrementing()
@@ -68,16 +87,16 @@ public with sharing class Homework
         // Update the comments to change ? to the value that you 
         // think will be written to the debug log
 
-        System.debug('Prefix = ' + (++x));  // Prefix = ?
+        System.debug('Prefix = ' + (++x));  // Prefix = 4
 
-        System.debug('Postfix = ' + (x++)); // Postfix = ?
+        System.debug('Postfix = ' + (x++)); // Postfix = 3
 
 
     }
 
     public void toCelsius(Integer farenheight)
     {
-        Integer celsius;
+        Integer celsius = (farenheight - 32) * 5/9;
 
         // convert the farenheight parameter to celsius and assign to
         // the celsius variable in as few statements as possible and
@@ -86,6 +105,19 @@ public with sharing class Homework
     public Integer equals(String first, String second)
     {
         Integer result;
+
+        if (first==second)
+        {
+            result = 0;
+        }
+        else if(first>second)
+        {
+            result = 1;
+        }
+        else
+        {
+            result = -1;
+        }
 
         // set result to 0 if first and second are equal
         // set result to 1 if first is greater than second 
@@ -97,10 +129,13 @@ public with sharing class Homework
     public Integer raise(Integer value, Integer power)
     {
         Integer result;
-
+        result=Math.pow(value, power).intValue();
+      
         // assign 'value' raised to the power of 'power' to result
         // e.g. if value is 10 and power is 2, result should be 100
         // do not use a loop!
+
+        // Feivor notes, in this case casting is required 
 
         return result;
     }
@@ -108,6 +143,7 @@ public with sharing class Homework
     public Boolean inBounds(Integer value, Integer upper, Integer lower)
     {
         Boolean result;
+        result =((value>=lower) && (value<=upper));
 
         // assign result true if value is within upper and lower, where equal to a boundary means value is within it. 
         // E.g. if value is 10, upper is 10 and lower is 4, result is true
@@ -134,6 +170,6 @@ public with sharing class Homework
         estateCar=familyCar;
 
         // update the assert below with the correct value for speed
-        System.assertEquals(null, estateCar.speed);
+        System.assertEquals(70, estateCar.speed);
     }
 }
